@@ -1,7 +1,8 @@
 import React from 'react';
+import MovieListContainer from '../containers/movies/MovieListContainer';
 
 const MovieListPage = () => {
-  return <div>영화 목록</div>;
+  return <MovieListContainer />;
 };
 
 export default MovieListPage;
