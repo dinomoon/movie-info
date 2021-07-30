@@ -17,9 +17,9 @@ export const getMovies = () => async (dispatch) => {
       let { userRating, director, actor, image, pubDate } =
         response.data.items[0];
 
-      director = director.replace(/\|/g, ', ');
+      director = director.replaceAll('|', ', ');
       director = director.slice(0, -2);
-      actor = actor.replace(/\|/g, ', ');
+      actor = actor.replaceAll('|', ', ');
       actor = actor.slice(0, -2);
 
       const movieInfo = {

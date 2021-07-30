@@ -1,7 +1,8 @@
 import React from 'react';
+import MovieViewerContainer from '../containers/movie/MovieViewerContainer';
 
 const MoviePage = () => {
-  return <div>영화 읽기</div>;
+  return <MovieViewerContainer />;
 };
 
 export default MoviePage;
