@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RegisterPage = () => {
-  return <div>회원가입</div>;
+  return <RegisterPage />;
 };
 
 export default RegisterPage;

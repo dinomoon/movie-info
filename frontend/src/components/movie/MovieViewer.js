@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MovieViewer = ({ movie }) => {
-  const { title, rating, pubDate, director, actor, image } = movie[0];
+  const { title, rating, pubDate, director, actor, image } = movie;
   return (
     <div className="movie-wrapper">
       <img src={image} alt="" />

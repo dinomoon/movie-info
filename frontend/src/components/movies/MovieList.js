@@ -7,7 +7,7 @@ const MovieItem = ({ movie }) => {
     <div className="movie-wrapper">
       <img src={image} alt="" />
       <div className="movie-info">
-        <h2>
+        <h2 className="title">
           <Link to={`/movie/${title}`}>{title}</Link>
         </h2>
         <div>{rating}</div>

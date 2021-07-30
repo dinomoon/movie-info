@@ -1,4 +1,4 @@
-import { createAction, handleActions } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import * as moviesAPI from '../lib/api/movies';
 
 const GET_MOVIES = 'movies/GET_MOVIES';
@@ -34,7 +34,7 @@ export const getMovies = () => async (dispatch) => {
     }
     dispatch({
       type: GET_MOVIES_SUCCESS,
-      payload: movies,
+      movies,
     });
   } catch (e) {
     dispatch({
@@ -50,14 +50,14 @@ const initialState = {
   movies: null,
 };
 
-const movie = handleActions(
+const movies = handleActions(
   {
     [GET_MOVIES]: (state, action) => ({
       ...state,
       loading: true,
     }),
     [GET_MOVIES_SUCCESS]: (state, action) => ({
-      movies: action.payload,
+      movies: action.movies,
       loading: false,
     }),
     [GET_MOVIES_FAILURE]: (state, action) => ({
@@ -68,4 +68,4 @@ const movie = handleActions(
   initialState,
 );
 
-export default movie;
+export default movies;

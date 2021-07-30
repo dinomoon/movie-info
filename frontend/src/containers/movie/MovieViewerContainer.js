@@ -5,9 +5,8 @@ import { useSelector } from 'react-redux';
 
 const MovieViewerContainer = ({ match }) => {
   const title = match.params.title;
-  const movies = useSelector((state) => state.movie.movies);
-  const movie = movies.filter((movie) => movie.title === title);
-
+  const movies = useSelector((state) => state.movies.movies);
+  const movie = movies.find((movie) => movie.title === title);
   return <MovieViewer movie={movie} />;
 };
 
