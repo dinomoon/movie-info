@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const textMap = {
+  login: '회원가입',
+  register: '로그인',
+};
+const Header = ({ type }) => {
+  const text = textMap[type];
   return (
     <header>
       <h1 className="title">
         <Link to="/">React Movies</Link>
       </h1>
       <button type="button" className="login-btn">
-        <Link to="/login">로그인</Link>
+        <Link to={type === 'login' ? '/register' : '/login'}>{text}</Link>
       </button>
     </header>
   );
