@@ -34,9 +34,11 @@ export const checkOwnComment = (ctx, next) => {
 // 댓글 조회
 export const read = async (ctx) => {
   const { title } = ctx.params;
+  console.log(title);
   try {
     const movie = await Movie.findOne({ title }).exec();
     if (!movie) {
+      ctx.body = 'Not Movie!';
       return;
     }
     ctx.body = movie;
