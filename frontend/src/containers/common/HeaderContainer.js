@@ -1,11 +1,17 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import Header from '../../components/common/Header';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../modules/user';
 
-const HeaderContainer = ({ match }) => {
-  const url = match.url;
-  const type = url === '/login' ? 'login' : 'register';
-  return <Header type={type} />;
+const HeaderContainer = ({ type }) => {
+  const dispatch = useDispatch();
+  const { user } = useSelector(({ user }) => ({ user: user.user }));
+
+  const onLogout = () => {
+    dispatch(logout());
+  };
+
+  return <Header type={type} user={user} onLogout={onLogout} />;
 };
 
-export default withRouter(HeaderContainer);
+export default HeaderContainer;

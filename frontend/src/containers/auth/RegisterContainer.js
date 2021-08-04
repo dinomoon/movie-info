@@ -55,6 +55,11 @@ const RegisterContainer = ({ history }) => {
     if (user) {
       console.log('check API 성공');
       history.push('/');
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (e) {
+        console.log('localStorage is not working');
+      }
     }
   }, [user, history]);
 

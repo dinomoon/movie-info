@@ -9,11 +9,13 @@ export default function createRequestSaga(type, request) {
     // dispatch({type: START_LOADING, auth/REGISTER})
     try {
       const response = yield call(request, action.payload);
+      console.log(response);
       yield put({
         type: SUCCESS,
         payload: response.data,
       });
     } catch (e) {
+      console.log(e);
       yield put({
         type: FAILURE,
         payload: e,
