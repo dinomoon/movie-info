@@ -36,3 +36,7 @@ export const getMovieInfo = (movie) => {
     },
   });
 };
+
+export const getComments = (title) => {
+  client.get(`/api/movies/${title}`);
+};

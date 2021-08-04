@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import MovieViewer from '../../components/movie/MovieViewer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getComments } from '../../modules/movies';
 
 const MovieViewerContainer = ({ match }) => {
-  const title = match.params.title;
+  const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies.movies);
+  const title = match.params.title;
   const movie = movies.find((movie) => movie.title === title);
+
+  useEffect(() => {
+    dispatch(getComments('MMMM'));
+  }, [dispatch]);
+
   return <MovieViewer movie={movie} />;
 };
 

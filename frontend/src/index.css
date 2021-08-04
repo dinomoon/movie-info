@@ -42,11 +42,26 @@ header .login-btn {
   background-color: #4c6ef5;
   color: #fff;
   border-radius: 4px;
+  margin-right: 10px;
 }
 
-header .login-btn a {
+header .register-btn {
+  font-size: 1rem;
+  border: none;
+  background-color: #4c6ef5;
+  color: #fff;
+  border-radius: 4px;
+}
+
+:is(header) button a {
   display: inline-block;
   padding: 10px 16px;
+}
+
+header .username {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 /* movie */
@@ -72,4 +87,45 @@ header .login-btn a {
 
 .movie-wrapper img {
   margin-right: 1rem;
+}
+
+/* auth-form */
+.authform-container {
+  width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.authform-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.authform-container label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.authform-container input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 8px;
+  height: 45px;
+  font-size: 1rem;
+  border: 1px solid #adb5bd;
+}
+
+.authform-container button {
+  height: 45px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4c6ef5;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
 }

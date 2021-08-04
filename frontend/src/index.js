@@ -6,14 +6,31 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './modules';
+import rootReducer, { rootSaga } from './modules';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
+import createSagaMiddleware from '@redux-saga/core';
+import { tempSetUser, check } from './modules/user';
 
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(ReduxThunk)),
+  composeWithDevTools(applyMiddleware(ReduxThunk, sagaMiddleware)),
 );
+
+function loadUser() {
+  try {
+    const user = localStorage.getItem('user');
+    if (!user) return;
+    store.dispatch(tempSetUser(user));
+    store.dispatch(check());
+  } catch (error) {
+    console.log('localStorage is not working');
+  }
+}
+
+sagaMiddleware.run(rootSaga);
+loadUser();
 
 ReactDOM.render(
   <React.StrictMode>
