@@ -8,13 +8,7 @@ module.exports = (app) => {
     }),
   );
   app.use(
-    createProxyMiddleware('/api/movies', {
-      target: 'http://localhost:4000/',
-      changeOrigin: true,
-    }),
-  );
-  app.use(
-    createProxyMiddleware('/api/auth', {
+    createProxyMiddleware('/api', {
       target: 'http://localhost:4000/',
       changeOrigin: true,
     }),

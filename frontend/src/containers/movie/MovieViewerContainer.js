@@ -12,7 +12,7 @@ const MovieViewerContainer = ({ match }) => {
 
   useEffect(() => {
     dispatch(getComments('MMMM'));
-  }, [dispatch, title]);
+  }, [dispatch]);
 
   return <MovieViewer movie={movie} />;
 };
