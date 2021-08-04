@@ -48,6 +48,7 @@ export const login = async (ctx) => {
       ctx.status = 401;
       return;
     }
+    console.log(user);
     ctx.body = user;
     const token = user.generateToken();
     ctx.cookies.set('access_token', token, {

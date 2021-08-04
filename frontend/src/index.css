@@ -89,6 +89,21 @@ header .username {
   margin-right: 1rem;
 }
 
+.comment-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.comment-list .comment-top {
+  margin-bottom: 6px;
+}
+
+.comment-list .username {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
 /* auth-form */
 .authform-container {
   width: 600px;

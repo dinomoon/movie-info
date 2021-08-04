@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const CommentSchema = new Schema({
   text: String,
-  creaatedDate: {
+  createdDate: {
     type: Date,
     default: Date.now,
   },
