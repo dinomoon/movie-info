@@ -48,6 +48,10 @@ export const getMovies = () => async (dispatch) => {
 const initialState = {
   loading: false,
   movies: null,
+  comment: {
+    editing: false,
+    text: '',
+  },
 };
 
 const movies = handleActions(

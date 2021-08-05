@@ -10,10 +10,18 @@ const MovieItem = ({ movie }) => {
         <h2 className="title">
           <Link to={`/movie/${title}`}>{title}</Link>
         </h2>
-        <div>{rating}</div>
-        <div>{pubDate}</div>
-        <div>{director}</div>
-        <div>{actor}</div>
+        <div className="sub-info">
+          <span>평점</span> {rating}
+        </div>
+        <div className="sub-info">
+          <span>개요</span> {pubDate}년 개봉
+        </div>
+        <div className="sub-info">
+          <span>감독</span> {director}
+        </div>
+        <div className="sub-info">
+          <span>출연</span> {actor}
+        </div>
       </div>
     </div>
   );
